@@ -67,6 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/subheader_margin"
             tools:text="0"
+            android:text="@{CounterVM.dislikeCount.toString()}"
             app:layout_constraintStart_toStartOf="@+id/lbl_subheader_dislike"
             app:layout_constraintTop_toBottomOf="@+id/lbl_subheader_dislike" />
 
