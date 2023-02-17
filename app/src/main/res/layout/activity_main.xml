@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="CounterVM"
+        type="com.udeni.labsheet2.CounterViewModel" />
+</data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/title_margin"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/lbl_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/title_margin"
+            android:text="@string/app_title"
+            android:textSize="@dimen/title_font_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbl_subheader_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_like"
+            android:textSize="@dimen/subtitle_font_size"
+            app:layout_constraintEnd_toStartOf="@+id/lbl_subheader_dislike"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_header" />
+
+
+        <TextView
+            android:id="@+id/lbl_subheader_dislike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_dislike"
+            android:textSize="@dimen/subtitle_font_size"
+            app:layout_constraintBaseline_toBaselineOf="@+id/lbl_subheader_like"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/lbl_subheader_like" />
+
+        <TextView
+            android:id="@+id/lbl_count_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/subheader_margin"
+            tools:text="0"
+            android:text="@{CounterVM.likeCount.toString()}"
+            app:layout_constraintStart_toStartOf="@+id/lbl_subheader_like"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_subheader_like" />
+
+        <TextView
+            android:id="@+id/lbl_count_dislike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/subheader_margin"
+            tools:text="0"
+            app:layout_constraintStart_toStartOf="@+id/lbl_subheader_dislike"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_subheader_dislike" />
+
+        <Button
+            android:id="@+id/btn_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/button_margin_high"
+            android:text="@string/like_plus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_count_like" />
+
+        <Button
+            android:id="@+id/btn_dislike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/button_margin_low"
+            android:text="@string/dislike_minus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_like" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

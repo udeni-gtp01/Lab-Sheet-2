@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_margin">50dp</dimen>
+    <dimen name="title_font_size">24sp</dimen>
+    <dimen name="subtitle_font_size">18sp</dimen>
+    <dimen name="subheader_margin">16dp</dimen>
+    <dimen name="button_margin_high">100dp</dimen>
+    <dimen name="button_margin_low">50dp</dimen>
+</resources>

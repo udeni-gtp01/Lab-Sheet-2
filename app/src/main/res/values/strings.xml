@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LabSheet2</string>
+    <string name="app_title">Like Counter</string>
+    <string name="label_like">LIKE</string>
+    <string name="label_dislike">DISLIKE</string>
+    <string name="dislike_minus">DISLIKE-</string>
+    <string name="like_plus">LIKE+</string>
+</resources>
