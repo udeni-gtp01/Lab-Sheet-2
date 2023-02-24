@@ -18,25 +18,20 @@ class MainActivity : AppCompatActivity() {
         binding.counterVM = viewModel
         binding.lifecycleOwner = this
 
-        viewModel.init(getAppSharedPreferences())
-
         binding.btnLike.setOnClickListener {
             viewModel.performLike()
+            AppSharedPreference(this).saveLikes(viewModel.likeCount.value ?: 0)
         }
         binding.btnDislike.setOnClickListener {
             viewModel.performDislike()
+            AppSharedPreference(this).saveDislikes(viewModel.dislikeCount.value ?: 0)
         }
     }
 
-    override fun onStop() {
-        super.onStop()
-        var editor = getAppSharedPreferences().edit()
-        editor.putString("likecount", binding.lblCountLike.text.toString())
-        editor.putString("dislikecount", binding.lblCountDislike.text.toString())
-        editor.commit()
-    }
-
-    fun getAppSharedPreferences(): SharedPreferences {
-        return getSharedPreferences("LABSHEET2", Context.MODE_PRIVATE)
+    override fun onResume() {
+        super.onResume()
+        val savedLikeCount = AppSharedPreference(this).getLikes()
+        val savedDislikeCount = AppSharedPreference(this).getDislikes()
+        viewModel.startFromSavedCount(savedLikeCount, savedDislikeCount)
     }
 }

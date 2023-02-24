@@ -24,4 +24,9 @@ class CounterViewModel : ViewModel() {
     fun performDislike() {
         _dislikeCount.value = _dislikeCount.value?.plus(1)
     }
+
+    fun startFromSavedCount(likecount: Int, dislikecount: Int) {
+        _likeCount.value = likecount
+        _dislikeCount.value = dislikecount
+    }
 }

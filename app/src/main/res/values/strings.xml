@@ -5,4 +5,7 @@
     <string name="label_dislike">DISLIKE</string>
     <string name="dislike_minus">DISLIKE-</string>
     <string name="like_plus">LIKE+</string>
+    <string name="shared_pref_name">LABSHEET2</string>
+    <string name="likecount">likecount</string>
+    <string name="dislikecount">dislikecount</string>
 </resources>
